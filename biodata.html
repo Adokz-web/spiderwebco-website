@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Biodata</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background: url('animation/try2.gif') no-repeat center center/cover;
+            background-size: cover;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Menu Icon */
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 1.8em;
+            background: rgba(0, 0, 0, 0.7);
+            color: red;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        .menu-icon:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 250px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: -250px; /* Hidden by default */
+            transition: left 0.3s ease;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 999;
+        }
+
+        .sidebar.active {
+            left: 0; /* Slide the menu in */
+        }
+
+        .sidebar h1 {
+            color:  #1bf1ff;
+            font-size: 1.8em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+        }
+
+        .sidebar ul li {
+            margin: 20px 0;
+        }
+
+        .sidebar ul li a {
+            color: red;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar ul li a:hover {
+            color: #red;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #red;
+        }
+
+        /* Main Content */
+        .content {
+            transition: margin-left 0.3s ease; /* Smooth movement */
+            margin-left: 0; /* Default position */
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .image-container {
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            padding: 10px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .details-container {
+            flex: 2;
+            padding: 10px;
+        }
+
+        .details-container h2 {
+            margin-bottom: 15px;
+            color: #1bf1ff;
+        }
+
+        .image-frame-container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .image-frame {
+        flex: 1;
+        max-width: 400px; /* Maximum width for each image */
+        height: 300px; /* Fixed height for consistency */
+        border: 5px solid #red;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.7); /* Background to handle empty frames */
+    }
+
+    .image-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures images scale properly */
+        display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Icon -->
+    <div class="menu-icon" id="menuIcon">
+        &#9776; <!-- Hamburger Icon -->
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <div>
+            <h1>.</h1>
+            <h1>Menu</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="biodata.html">My Biodata</a></li>
+                <li><a href="portfolio.html">My Portfolio</a></li>
+                <li><a href="video.html">My Video</a></li>
+                <li><a href="comments.html">Your Comments</a></li>
+            </ul>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-behance"></i></a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content" id="content">
+        <div class="container">
+            <div class="image-container">
+                <!-- Placeholder for your image -->
+                <img src="animation/pp.jpg" alt="My Image">
+            </div>
+            <div class="details-container">
+                <h2>About Me</h2>
+                <p><strong>Name:</strong> ETHAN ZACHARY JAYA ANAK NELSON JUGAH</p>
+                <p><strong>Date of Birth:</strong> 27th JANUARY 2000</p>
+                <p><strong>Email:</strong> ethanzachary.ez5@gmail.com</p>
+                <p><strong>Phone:</strong> 019-8146727</p>
+                <p><strong>Address:</strong> NO.127 SEBELAH RUMAH KAMU JALAN TIADA HALA, 93350, KUCHING SARAWAK</p>
+                <p><strong>Education:</strong> DIPLOMA IN INFORMATION TECHNOLOGY(DIGITAL TECHNOLOGY), BACHELOR DEGREE IN MULTIMEDIA TECHNOLOGY</p>
+                <p><strong>Skills:</strong> ABLE TO DESIGN 2D and 3D CHARACTER</p>
+            </div>
+        </div>
+
+        <!-- New Image Frames -->
+        <div class="image-frame-container">
+            <div class="image-frame">
+                <img src="animation/ums.jpg" alt="Image 1">
+            </div>
+            <div class="image-frame">
+                <img src="animation/pmu.jpeg" alt="Image 2">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Spider Web Co. All Rights Reserved.
+    </footer>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script>
+        const menuIcon = document.getElementById('menuIcon');
+        const sidebar = document.getElementById('sidebar');
+        const content = document.getElementById('content');
+
+        menuIcon.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+
+            // Push the content when sidebar opens/closes
+            if (sidebar.classList.contains('active')) {
+                content.style.marginLeft = '250px';
+            } else {
+                content.style.marginLeft = '0';
+            }
+        });
+    </script>
+</body>
+</html>

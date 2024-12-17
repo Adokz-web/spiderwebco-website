@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Sidebar Menu</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background: url('animation/try.gif') no-repeat center center/cover;
+            background-size: cover;
+        }
+
+        /* Menu Icon */
+        .menu-icon {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 1.8em;
+            background: rgba(0, 0, 0, 0.7);
+            color: red;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+
+        .menu-icon:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 250px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: -250px; /* Initially hidden */
+            transition: left 0.3s ease;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 999;
+        }
+
+        .sidebar.active {
+            left: 0; /* Slide in the menu */
+        }
+
+        .sidebar h1 {
+            color: #1bf1ff;
+            font-size: 1.8em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+        }
+
+        .sidebar ul li {
+            margin: 20px 0;
+        }
+
+        .sidebar ul li a {
+            color: red;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .sidebar ul li a:hover {
+            color: #red;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Icon -->
+    <div class="menu-icon" id="menuIcon">
+        &#9776; <!-- Unicode for the hamburger icon -->
+    </div>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <div>
+            <h1> "                 "</h1>
+            <h1>MENU</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="biodata.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="comments.html">Comments</a></li>
+            </ul>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-behance"></i></a>
+        </div>
+    </div>
+
+    <!-- Font Awesome (For Social Icons) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+        // JavaScript to toggle the menu
+        const menuIcon = document.getElementById('menuIcon');
+        const sidebar = document.getElementById('sidebar');
+
+        menuIcon.addEventListener('click', () => {
+            sidebar.classList.toggle('active'); // Toggle sidebar visibility
+        });
+    </script>
+</body>
+</html>
